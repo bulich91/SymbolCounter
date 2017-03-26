@@ -10,16 +10,14 @@ import java.util.Map;
 public class SymbolCounter {
     private static Map <Character, Integer> map = new HashMap <>();
 
-
     public static void main(String[] args) {
 
         String encoding = "UTF-8";
-        File file = new File("MyText.txt");
+        File file = new File("src/main/resources/MyText.txt");
         try {
             handleFile(file, encoding);
             for (Map.Entry entry : map.entrySet()) {
-                System.out.println("Key: " + entry.getKey() + " Value: "
-                        + entry.getValue());
+                System.out.println("Symbol: " + entry.getKey() + " appears " + entry.getValue() + " times");
             }
         }
         catch(IOException e) {
